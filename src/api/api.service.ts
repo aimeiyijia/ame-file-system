@@ -4,8 +4,9 @@ import { defaultIfEmpty, filter, map, mergeMap, reduce } from 'rxjs/operators';
 
 import { pipeline } from 'stream/promises';
 import { join } from 'path';
-import { tmpdir } from 'os';
 import { createWriteStream } from 'fs';
+
+import * as Config from 'config';
 
 import { deserialize } from '../utils/functions';
 import {
@@ -13,6 +14,7 @@ import {
   RxFileUploadFileData,
 } from '../types/upload.type';
 
+const storgePath = Config.storge.path;
 @Injectable()
 export class ApiService {
   /**
@@ -31,7 +33,7 @@ export class ApiService {
               filter((chunkData: any) => typeof chunkData === 'object'),
               map((chunkData: any) => deserialize(chunkData.value)),
               map((chunkData: RxFileUploadChunkData) => ({
-                path: join(tmpdir(), fileData.name),
+                path: join(storgePath, fileData.name),
                 options: {
                   flags: chunkData.sequence > 1 ? 'r+' : 'w',
                   encoding: 'binary',
@@ -39,7 +41,7 @@ export class ApiService {
                 },
               })),
               defaultIfEmpty({
-                path: join(tmpdir(), fileData.name),
+                path: join(storgePath, fileData.name),
                 options: {
                   flags: 'w',
                   encoding: 'binary',

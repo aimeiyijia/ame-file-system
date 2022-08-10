@@ -31,6 +31,8 @@ assets:
     lastModified: true
     maxAge: 86400000
 
+storge:
+  path: '/Users/liuxiaofan/Downloads'
 ##
 # Configuration for file upload input inside ../views/upload.hbs
 #
@@ -57,7 +59,11 @@ upload:
     accept:
       - application/pdf
       - image/*
-#      - video/*
+      - video/*
+      - .doc
+      - .docx
+      - .rar
+      - .zip
   api:
     fileEndpoint: /api/upload
     method: POST
