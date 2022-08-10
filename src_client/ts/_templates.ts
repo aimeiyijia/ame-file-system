@@ -1,7 +1,7 @@
 /**
  * Default file list template
  */
-const defaultFilesListContent = `<div class="preview mdc-typography--body2 mgt30">No file selected for the moment.</div>`;
+const defaultFilesListContent = `<div class="preview mdc-typography--body2 mgt30">暂未选择文件</div>`;
 
 /**
  * File list detail template
@@ -11,7 +11,7 @@ const fileUploadDetailTpl = `
         <div class="display-flex">
             <div class="display-flex file-upload-detail-description direction-column">
                 <div class="wb-all mdc-typography--body2">{{filename}}</div>
-                <div class="mdc-typography--caption">Size: {{filesize}}</div>
+                <div class="mdc-typography--caption">大小: {{filesize}}</div>
             </div>
             <div class="display-flex content-center file-upload-detail-progress">
                 <div class="progress-container">

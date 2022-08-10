@@ -1,24 +1,23 @@
-<div class="mdc-typography--body2">
-    Click on the "select files" button to select the files to upload and then click on the "upload" button to send
-    them to the server.
+<div class="mdc-typography--body3">
+    点击 "选择文件" 按钮选择要上传的文件，然后点击 "上传" 按钮上传选择的文件。
 </div>
 <div class="mdc-typography--body2">
-    The list of files that will be sent will be displayed in the area below.
+    上传的文件列表将显示在下面的区域
 </div>
 <div class="display-flex content-center justify-content-space mgt30">
     <button id="select-files" class=" mdc-button mdc-button--raised">
         <div class="mdc-button__ripple"></div>
         <i class="material-icons mdc-button__icon" aria-hidden="true">folder</i>
-        <span id="button-label" class="mdc-button__label">Select Files</span>
+        <span id="button-label" class="mdc-button__label">选择文件</span>
     </button>
     <button id="upload-files" class="mdc-button mdc-button--raised" disabled>
         <div class="mdc-button__ripple"></div>
         <i class="material-icons mdc-button__icon" aria-hidden="true">file_upload</i>
-        <span id="button-label" class="mdc-button__label">Upload</span>
+        <span id="button-label" class="mdc-button__label">上传</span>
     </button>
 </div>
 <div class="display-flex content-center justify-content-left mgt30">
-    <div class="mdc-typography--body2">Upload options:</div>
+    <div class="mdc-typography--body2">上传选项:</div>
     <div class="display-flex justify-content-space flew-grow-2">
         <div class="mdc-form-field">
             <div class="mdc-checkbox">
@@ -36,7 +35,7 @@
                 </div>
                 <div class="mdc-checkbox__ripple"></div>
             </div>
-            <label class="mdc-typography--caption" for="add-checksum">Add sha256 checksum</label>
+            <label class="mdc-typography--caption" for="add-checksum">增加 sha256 校验</label>
         </div>
         <div class="mdc-form-field">
             <div class="mdc-checkbox">
@@ -54,12 +53,12 @@
                 </div>
                 <div class="mdc-checkbox__ripple"></div>
             </div>
-            <label class="mdc-typography--caption" for="use-chunks">Use chunks to upload file</label>
+            <label class="mdc-typography--caption" for="use-chunks">使用分片上传</label>
         </div>
     </div>
 </div>
 <div class="display-flex content-center justify-content-left">
-    <div class="mdc-typography--body2">Chunk size (Mb):</div>
+    <div class="mdc-typography--body2">分片大小 (Mb):</div>
     <div id="chunk-size-selector" class="mdc-slider mdc-slider--discrete mdc-slider--tick-marks mdc-slider--disabled flew-grow-2">
         <input class="mdc-slider__input" type="range" min="0" max="50" value="0" name="chunkSize" step="5"
                aria-label="Chunk size for file upload" disabled>
@@ -93,7 +92,7 @@
     </div>
 </div>
 <div id="preview">
-    <div class="preview mdc-typography--body2 mgt30">No file selected for the moment.</div>
+    <div class="preview mdc-typography--body2 mgt30">暂未选择文件</div>
 </div>
 
 <input id="input-file" class="display-none" type="file" accept="{{accept}}" multiple />
